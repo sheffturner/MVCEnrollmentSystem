@@ -1,0 +1,126 @@
+﻿body {
+    background-color: #f8f8f8;
+}
+
+.login {
+    background-color: #fff;
+    border-radius: 10px !important;
+}
+
+.formcenter {
+    margin: 0 auto !important;
+}
+
+.formbox{
+    padding: 0 !important;
+}
+
+.formwidth{
+    width: 280px;
+}
+
+.groups{
+    padding: 0 !important;
+}
+
+.registerlink{
+    margin-bottom: 50px;
+}
+
+.fgroup{
+    padding: 0 !important;
+}
+
+.don{
+    margin: 0 !important;
+    width: 100%;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#authentication {
+  margin-bottom: 40px;
+}
+
+.loginbody {
+    margin-bottom: 6%;
+}
+
+#login-info {
+    font-size: 13px;
+}
+
+.logo{
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.formlabel{
+    margin-left: 21%;
+}
+
+.checkbox.formlabel{
+    margin-left: 27%;
+}
+
+.links{
+    display: inline-block !important;
+    margin-left: 24% !important;
+}
+
+/*MEDIA QUERIES
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .formlabel {
+        margin-left: 15%;
+    }
+
+    .checkbox.formlabel {
+        margin-left: 21%;
+    }
+
+    .links {
+        display: inline-block !important;
+        margin-left: 17% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 700px) {
+    .formlabel {
+        margin-left: 8%;
+    }
+
+    .checkbox.formlabel {
+        margin-left: 14%;
+    }
+
+    .links {
+        display: inline-block !important;
+        margin-left: 13% !important;
+    }
+}
+*/
+@media only screen and (max-width: 699px) and (min-width: 360px) {
+    .formlabel {
+        margin-left: 2%;
+    }
+
+    .checkbox.formlabel {
+        margin-left: 8%;
+    }
+
+    .links {
+        display: inline-block !important;
+        margin-left: 7% !important;
+    }
+}
