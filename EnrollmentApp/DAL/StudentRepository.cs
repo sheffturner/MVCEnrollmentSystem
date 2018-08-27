@@ -5,29 +5,64 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using Dapper;
+using Microsoft.AspNet.Identity;
+using System.Security.Principal;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace EnrollmentApp.DAL
 {
     public class StudentRepository
     {
-
+              
         public List<Student> GetStudents()
         {
+            throw new NotImplementedException();
+        }
+
+        public Student GetSingleStudent(int? id, string username)
+        {
+            Student student = new Student();
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
             {
-                var output = connection.Query<Student>("SELECT [StudentID],[FirstName],[LastName],[Major],[Year],[GPA] FROM [Student]").ToList();
-                return output;
+                string sql = "dbo.spStudent_GetSingleStudent";
+                student = connection.QuerySingle<Student>(sql,
+                    new {   StudentID = id,
+                            UserName = username
+                    }, commandType: CommandType.StoredProcedure);
+                   
+                return student;
             }
         }
 
-        public Student GetSingleStudent(int id)
+        public bool InsertStudent(ApplyViewModels student, string username)
         {
-            throw new NotImplementedException();
-        }
+            
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
+            {
+                string sql = "dbo.spStudent_InsertStudentInfo";
+                int rowsAffected = connection.Execute(sql, 
+                    new {   UserName = username,
+                            FirstName = student.FirstName,
+                            LastName = student.LastName,
+                            DOB = student.DOB,
+                            Gender = student.Gender.ToString(),
+                            Street = student.Street,
+                            City = student.City,
+                            Zip = student.Zip,
+                            State = student.State,
+                            Country = student.Country,
+                            PhoneNumber = student.PhoneNumber,
+                            Major = student.Major.ToString(),
+                    }, commandType: CommandType.StoredProcedure);
 
-        public bool InsertStudent(Student student)
-        {
-            throw new NotImplementedException();
+                if (rowsAffected > 0)
+                {
+                    return true;
+                }
+                return false;
+                
+            }
         }
 
         public bool UpdateCustomer(Student student)
@@ -38,6 +73,17 @@ namespace EnrollmentApp.DAL
         public bool DeletePerson(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public int GetStudentCount(string username)
+        {   
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
+            {
+              
+                string sql = String.Format("Select Count(*) from dbo.Student Where Student.UserName = '{0}'", username);
+                var output = connection.Query<int>(sql);
+                return output.First();
+            }
         }
     }
 }

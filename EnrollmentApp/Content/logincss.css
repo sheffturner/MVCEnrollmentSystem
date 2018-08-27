@@ -78,6 +78,10 @@
     margin-left: 24% !important;
 }
 
+.confirmpass{
+    margin-bottom: 20px;
+}
+
 /*MEDIA QUERIES
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {

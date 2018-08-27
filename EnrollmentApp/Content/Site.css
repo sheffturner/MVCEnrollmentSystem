@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+ 
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -17,9 +18,54 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+
+.logo2{
+    background-image: url('~/Content/Images/logo2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body-content {
+    margin-top: 40px !important;
+}
+.navbar-toggler {
+    border-color: #262161;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(38,33,97, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    padding-top: 22px !important;
+    color: #262161 !important;
+}
+
+.applybody {
+   
+    background: #f8f8f8;
+}
+
+.applyform {
+    margin-top: 30px;
+ 
+}
+
+#authentication{
+    margin-bottom: 40px;
+  
+}
+
+
+.fnamebox {
+    float: left;
+
+}
+
+.lnamebox {
+    float: right;   
+}
+
+#majorbox{
+    margin-bottom: 15px;
 }

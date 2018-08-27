@@ -22,8 +22,8 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group groups fgroup">
                         <div class="col-md-12 formbox">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder="Email"})
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder="User ID"})
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group groups fgroup">
