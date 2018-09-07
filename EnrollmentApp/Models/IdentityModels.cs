@@ -3,6 +3,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using EnrollmentApp.Models;
+using EnrollmentApp.DAL;
+using System.Web;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace EnrollmentApp.Models
 {
@@ -10,15 +14,23 @@ namespace EnrollmentApp.Models
     public class ApplicationUser : IdentityUser
     {
 
+        public override string UserName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
+
+            StudentRepository student = new StudentRepository();
+
+            Student dem = student.GetSingleStudent(null, UserName);
+            string usernamees = dem.FullName;
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
-     
+
+            userIdentity.AddClaim(new Claim("FullName", usernamees));
             return userIdentity;
         }
     }
+
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -33,5 +45,7 @@ namespace EnrollmentApp.Models
         }
 
         public System.Data.Entity.DbSet<EnrollmentApp.Models.Student> Students { get; set; }
+
+        public System.Data.Entity.DbSet<EnrollmentApp.Models.Course> Courses { get; set; }
     }
 }

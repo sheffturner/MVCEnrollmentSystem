@@ -1,0 +1,90 @@
+﻿@model List<EnrollmentApp.Models.Course>
+
+<div class="adddrop-container">
+    <div id="course-search">
+        <h5>Add Courses</h5>
+        <div class="course-list border">
+
+            <table class="table">
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course No.</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Room</th>
+                    <th></th>
+                </tr>
+
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => Model[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => m[i].Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => m[i].Day)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => m[i].Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => m[i].Room)
+                        </td>
+                        <td>
+                            @using (Ajax.BeginForm("AddStudentCourses", "Home", new { courseid = Model[i].CourseID },
+                             new AjaxOptions
+                             {
+                                 HttpMethod = "POST",
+                                 UpdateTargetId = "dropcourselist",
+                                 OnSuccess = "AddCourseOnSuccess",
+                                 OnFailure = "ErrorAlert"
+                             }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <input type="submit" class="btn btn-default" value="Add" id="@("button" + i)" />
+                            }
+                        </td>
+                    </tr>
+                }
+                @Html.Raw(TempData["msg"])
+            </table>
+
+        </div>
+        <h5>Drop Courses</h5>
+        <div class="course-list border">
+            <table class="table" id="dropcourselist">
+                @Html.Action("_DropCoursePartial")
+            </table>
+        </div>
+    </div>
+</div>
+<!--
+<Script>
+    function AddCourseOnSuccess() {
+        alert("Record updated successfully!");
+    }
+
+    function ErrorAlert() {
+        alert("Course inna schedule");
+    }
+</Script>
+    -->
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryunobtrusive")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.mask.js"></script>
+    <Script>
+        function AddCourseOnSuccess(data) {
+            alert("Couse Successfully Added To Your Schedule");
+        }
+
+        function ErrorAlert(xhr, status) {
+            alert('Error: ' + xhr.statusText);
+        }
+
+    </Script>
+}

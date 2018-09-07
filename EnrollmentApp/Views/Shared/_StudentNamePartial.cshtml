@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNet.Identity
+@using System.Security.Claims
+@{
+    var userWithClaims = (ClaimsPrincipal)User;
+    var fname = userWithClaims.Claims.First(c => c.Type == "FullName");
+
+    @fname.Value
+}

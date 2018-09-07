@@ -1,0 +1,29 @@
+﻿@model List<EnrollmentApp.Models.Course>
+
+<tr>
+    <th>Course Name</th>
+    <th>Course No.</th>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Room</th>
+</tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+    </tr>
+}

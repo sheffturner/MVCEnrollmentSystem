@@ -1,0 +1,252 @@
+﻿@model EnrollmentApp.Models.Student
+
+
+@if (Model.Year == "Freshman")
+{
+    <h5 id="grad-date">Expected graduation in 2022</h5>
+    <div id="yearcircles">
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#FED360" stroke-width="4" fill="transparent" />
+                    <text id="circular-arrow" x=27 y=50>&#10554;</text>
+                    <text id="circular-arrow" x=27 y=80>&#10555;</text>
+                </g>
+            </svg>
+            <p>1st Year</p>
+            <p class="pinprogress">In Progress</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:grey;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+                </g>
+            </svg>
+            <p>2nd Year</p>
+            <p class="pnotstarted">Not Started</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:grey;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+                </g>
+            </svg>
+            <p>3rd Year</p>
+            <p class="pnotstarted">Not Started</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:#E3E2E7;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+                </g>
+            </svg>
+            <p>4th Year</p>
+            <p class="pnotstarted">Not Started</p>
+        </div>
+    </div>
+
+
+
+
+}
+else if (Model.Year == "Sophomore")
+{
+    <h5 id="grad-date">Expected graduation in 2021</h5>
+    <div id="yearcircles">
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="4" fill="transparent" />
+                    <text id="check" x=30 y=70>&#10003;</text>
+                </g>
+            </svg>
+            <p>1st Year</p>
+            <p class="pcomplete">Complete</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:grey;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#FED360" stroke-width="4" fill="transparent" />
+                    <text id="circular-arrow" x=27 y=50>&#10554;</text>
+                    <text id="circular-arrow" x=27 y=80>&#10555;</text>
+                </g>
+            </svg>
+            <p>1st Year</p>
+            <p class="pinprogress">In Progress</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:grey;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+                </g>
+            </svg>
+            <p>3rd Year</p>
+            <p class="pnotstarted">Not Started</p>
+        </div>
+        <div class="lines">
+            <svg height="60" width="100">
+                <line x1="0" x2="120" style="stroke:#E3E2E7;stroke-width:7" />
+            </svg>
+        </div>
+        <div class="circlecheck">
+            <svg height="100" width="100">
+                <g>
+                    <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+                </g>
+            </svg>
+            <p>4th Year</p>
+            <p class="pnotstarted">Not Started</p>
+        </div>
+    </div>
+}
+else if (Model.Year == "Junior")
+{
+    <h5 id="grad-date">Expected graduation in 2020</h5>
+    <div class="circlecheck">
+        <svg height=auto; width=auto; viewBox="0 0 100 100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="4" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>1st Year</p>
+        <p class="pcomplete">Complete</p>
+    </div>
+    <div class="lines">
+        <svg width="100%" height="60">
+            <line x1="0%" x2="100%" style="stroke:grey;stroke-width:7" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height=auto; width=auto; viewBox="0 0 100 100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="4" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>2nd Year</p>
+        <p class="pcomplete">Complete</p>
+    </div>
+    <div class="lines">
+        <svg width="100%" height="60">
+            <line x1="0%" x2="100%" style="stroke:grey;stroke-width:7" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height=auto; width=auto; viewBox="0 0 100 100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#FED360" stroke-width="4" fill="transparent" />
+                <text id="circular-arrow" x=27 y=50>&#10554;</text>
+                <text id="circular-arrow" x=27 y=80>&#10555;</text>
+            </g>
+        </svg>
+        <p>3rd Year</p>
+        <p class="pinprogress">In Progress</p>
+    </div>
+    <div class="lines">
+        <svg width="100%" height="60">
+            <line x1="0%" x2="100%" style="stroke:#E3E2E7;stroke-width:7" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height=auto; width=auto; viewBox="0 0 100 100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#E3E2E7" stroke-width="4" fill="transparent" />
+
+            </g>
+        </svg>
+        <p>4th Year</p>
+        <p class="pnotstarted">Not Started</p>
+    </div>
+}
+else
+{
+    <h5 id="grad-date">Expected graduation in 2019</h5>
+    <div class="circlecheck">
+        <svg height="100" width="100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="3" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>1st Year</p>
+        <p class="pcomplete">Complete</p>
+    </div>
+    <div class="lines">
+        <svg height="60" width="100">
+            <line x1="0" x2="120" style="stroke:grey;stroke-width:6" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height="100" width="100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="3" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>2nd Year</p>
+        <p class="pcomplete">Complete</p>
+    </div>
+    <div class="lines">
+        <svg height="60" width="100">
+            <line x1="0" x2="120" style="stroke:grey;stroke-width:6" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height="100" width="100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="3" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>3rd Year</p>
+        <p class="pcomplete">Complete</p">
+    </div>
+    <div class="lines">
+        <svg height="60" width="100">
+            <line x1="0" x2="120" style="stroke:grey;stroke-width:6" />
+        </svg>
+    </div>
+    <div class="circlecheck">
+        <svg height="100" width="100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#2DC937" stroke-width="3" fill="transparent" />
+                <text id="check" x=30 y=70>&#10003;</text>
+            </g>
+        </svg>
+        <p>4th Year</p>
+        <p class="pcomplete">Complete</p>
+    </div>
+
+
+}

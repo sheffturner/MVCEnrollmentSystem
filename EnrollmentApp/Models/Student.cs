@@ -9,6 +9,7 @@ namespace EnrollmentApp.Models
     public class Student
     {
             public int StudentID { get; set; }
+            public string UserName { get; set; }
             public int AddressID { get; set; }
             public int MajorID { get; set; }
             public string FirstName { get; set; }
@@ -27,6 +28,14 @@ namespace EnrollmentApp.Models
             public string Zip { get; set; }
             public string State { get; set; }
             public string Country { get; set; }
+
+            public string FullName
+            {
+                get
+                {
+                    return FirstName + " " + LastName;
+                }
+            }
 
     }
 }

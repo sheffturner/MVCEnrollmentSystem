@@ -26,14 +26,23 @@ namespace EnrollmentApp.DAL
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
             {
                 string sql = "dbo.spStudent_GetSingleStudent";
-                student = connection.QuerySingle<Student>(sql,
+                student = connection.Query<Student>(sql,
                     new {   StudentID = id,
                             UserName = username
-                    }, commandType: CommandType.StoredProcedure);
+                    }, commandType: CommandType.StoredProcedure).FirstOrDefault();
                    
-                return student;
+                if(student == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return student;
+                }
+              
             }
         }
+
 
         public bool InsertStudent(ApplyViewModels student, string username)
         {
@@ -83,6 +92,23 @@ namespace EnrollmentApp.DAL
                 string sql = String.Format("Select Count(*) from dbo.Student Where Student.UserName = '{0}'", username);
                 var output = connection.Query<int>(sql);
                 return output.First();
+            }
+        }
+
+        public string GetStudentMajor(string username)
+        {
+            Student student = new Student();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
+            {
+               
+                string sql = "dbo.spStudent_GetStudentMajor";
+                student = connection.Query<Student>(sql,
+                    new
+                    {
+                        UserName = username
+                    }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                string output = student.Major;
+                return output;
             }
         }
     }

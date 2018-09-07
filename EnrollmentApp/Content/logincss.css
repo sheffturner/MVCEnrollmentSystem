@@ -1,10 +1,11 @@
 ﻿body {
-    background-color: #f8f8f8;
+    background-color: #262161;
 }
 
 .login {
     background-color: #fff;
     border-radius: 10px !important;
+    vertical-align: middle;
 }
 
 .formcenter {
@@ -80,6 +81,10 @@
 
 .confirmpass{
     margin-bottom: 20px;
+}
+
+footer {
+    color: #fff;
 }
 
 /*MEDIA QUERIES
