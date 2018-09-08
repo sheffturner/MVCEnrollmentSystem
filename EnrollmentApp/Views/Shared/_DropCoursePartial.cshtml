@@ -1,39 +1,54 @@
 ﻿@model List<EnrollmentApp.Models.Course>
-<tr>
-    <th>Course Name</th>
-    <th>Course No.</th>
-    <th>Day</th>
-    <th>Time</th>
-    <th>Room</th>
-</tr>
-@for (int i = 0; i < Model.Count; i++)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => Model[i].Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model[i].Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model[i].Day)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model[i].Time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model[i].Room)
-        </td>
-        <td>
-            @using (Ajax.BeginForm("DeleteStudentCourses", "Home", new { courseid = Model[i].CourseID },
-            new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "dropcourselist",
-            Confirm = "Are you sure you want to drop this course?"
-            }))
-            {
 
-                @Html.AntiForgeryToken()
-                <input type="submit" class="btn btn-default" value="Drop" />
-            }
-        </td>
-    </tr>
+@if (Model == null)
+{ 
+    <p>No Courses Available</p>
+    <Script>$("dropcourse-list").addClass("border");</Script>
+}
+else
+{
+    <table class="table border">
+        <tr>
+            <th>Course Name</th>
+            <th>Course No.</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Room</th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Day)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Room)
+                </td>
+                <td>
+                    @using (Ajax.BeginForm("DeleteStudentCourses", "Home", new { courseid = Model[i].CourseID },
+                    new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        UpdateTargetId = "dropcourse-list",
+                        Confirm = "Are you sure you want to drop this course?"
+                    }))
+                    {
+
+                        @Html.AntiForgeryToken()
+                        <input type="submit" class="btn btn-default" value="Drop" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+
 }

@@ -330,6 +330,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.marquee.js" />
+    <Content Include="Scripts\jquery.marquee.min.js" />
     <Content Include="Scripts\jquery.mask.js" />
     <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -338,11 +340,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\marquee3k.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -403,6 +407,8 @@
     <Content Include="Views\Home\AddDropCourses.cshtml" />
     <Content Include="Views\Shared\_CourseSearchPartial.cshtml" />
     <Content Include="Views\Shared\_DropCoursePartial.cshtml" />
+    <Content Include="Views\Shared\_ClassSchedulePartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutApply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

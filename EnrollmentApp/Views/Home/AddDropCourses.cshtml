@@ -1,7 +1,7 @@
 ﻿@model List<EnrollmentApp.Models.Course>
 
-<div class="adddrop-container">
-    <div id="course-search">
+<div  class="adddrop-container">
+    <div id="course-search" class="">
         <h5>Add Courses</h5>
         <div class="course-list border">
 
@@ -38,8 +38,7 @@
                              new AjaxOptions
                              {
                                  HttpMethod = "POST",
-                                 UpdateTargetId = "dropcourselist",
-                                 OnSuccess = "AddCourseOnSuccess",
+                                 UpdateTargetId = "dropcourse-list",
                                  OnFailure = "ErrorAlert"
                              }))
                             {
@@ -55,24 +54,12 @@
 
         </div>
         <h5>Drop Courses</h5>
-        <div class="course-list border">
-            <table class="table" id="dropcourselist">
+        <div id="dropcourse-list" class="">
                 @Html.Action("_DropCoursePartial")
-            </table>
         </div>
     </div>
 </div>
-<!--
-<Script>
-    function AddCourseOnSuccess() {
-        alert("Record updated successfully!");
-    }
 
-    function ErrorAlert() {
-        alert("Course inna schedule");
-    }
-</Script>
-    -->
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryunobtrusive")
     @Scripts.Render("~/bundles/jqueryval")
@@ -83,7 +70,7 @@
         }
 
         function ErrorAlert(xhr, status) {
-            alert('Error: ' + xhr.statusText);
+            alert(xhr.statusText);
         }
 
     </Script>

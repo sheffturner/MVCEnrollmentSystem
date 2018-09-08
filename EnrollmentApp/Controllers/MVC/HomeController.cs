@@ -76,6 +76,23 @@ namespace EnrollmentApp.Controllers
             }
         }
 
+        // This action is called when Home/Student (page) receives a request.
+        // It returns the class schedule partial
+        public ActionResult _ClassSchedulePartial()
+        {
+            string username = User.Identity.Name;
+            int si = s.Get(username).StudentID;
+            List<Course> course = c.GetStudentCourses(si);
+            if (course.Count() == 0)
+            {
+                return PartialView("_ClassSchedulePartial");
+            }
+            else
+            {
+                return PartialView("_ClassSchedulePartial", c.GetStudentCourses(si));
+            }
+        }
+
         // This action is called when a user "adds" a course to their couse schedule.
         // It adds the selected course to the students_course table.
         //Action used for AJAX operation (Display courses the student added. It returns a partial view).

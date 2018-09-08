@@ -8,37 +8,39 @@
     @Styles.Render("~/Content/themes/base/css")
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquerymarquee")
+    <script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <div class="row">
+    <div class="row layout-container">
         <div class="col-xl-2">
             <div class="col-xl-2 navigation">
-            <div class="user-role">
-                <h5 class="" id="student-role">Student</h5>
-                <h5 class="text-center" id="admin-role">Admin</h5>
-            </div>
-            <div class="logo-div">
-                <img src="@Url.Content("~/Content/Images/student1.jpg")" id="student-image" class="rounded-circle">
-            </div>
-            <div id="name-status">
-                <h5 id="student-name" class="text-center">@Html.Partial("_StudentNamePartial")</h5>
-                <p id="student-status" class="text-center">Undergraduate - Full Time</p>
-            </div>
-            <nav>
-                <ul>
-                    <li class="nav-item" id="dashboard"><a href="@Url.Action("Student", "Home", null)"><span class="oi oi-home" title="oi-home" aria-hidden="true"></span>Dashboard</a></li>
-                    <li class="nav-item" id="coursetraj"><a href="@Url.Action("StudentCourses", "Home", null)"><span class="oi oi-clock"></span>Course Trajectory </a></li>
-                    <li class="nav-item " id="coursesearch"><a href="@Url.Action("CourseSearch", "Home", null)"><span class="oi oi-magnifying-glass"></span>Course Search </a></li>
-                    <li class="nav-item " id="addrop"><a href="@Url.Action("AddDropCourses", "Home", null)"><span class="oi oi-plus"></span>/<span class="oi oi-minus"></span>Add/Drop Courses </a></li>
-                    @Html.Partial("_LogoutPartial")
-                </ul>
-            </nav>
+                <div class="user-role">
+                    <h5 class="" id="student-role">Student</h5>
+                    <h5 class="text-center" id="admin-role">Admin</h5>
+                </div>
+                <div class="logo-div">
+                    <img src="@Url.Content("~/Content/Images/student1.jpg")" id="student-image" class="rounded-circle">
+                </div>
+                <div id="name-status">
+                    <h5 id="student-name" class="text-center">@Html.Partial("_StudentNamePartial")</h5>
+                    <p id="student-status" class="text-center">Undergraduate - Full Time</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="nav-item" id="dashboard"><a href="@Url.Action("Student", "Home", null)"><span class="oi oi-home" title="oi-home" aria-hidden="true"></span>Dashboard</a></li>
+                        <li class="nav-item" id="coursetraj"><a href="@Url.Action("StudentCourses", "Home", null)"><span class="oi oi-clock"></span>Course Trajectory </a></li>
+                        <li class="nav-item " id="coursesearch"><a href="@Url.Action("CourseSearch", "Home", null)"><span class="oi oi-magnifying-glass"></span>Course Search </a></li>
+                        <li class="nav-item " id="addrop"><a href="@Url.Action("AddDropCourses", "Home", null)"><span class="oi oi-plus"></span>/<span class="oi oi-minus"></span>Add/Drop Courses </a></li>
+                        @Html.Partial("_LogoutPartial")
+                    </ul>
+                </nav>
             </div>
         </div>
-   
+
         <div class="col-xl-10 bodycontent">
-            <div id="notificationbar"></div>
+            <div id="notificationbar" class="marquee pt-2">Deadline for add/drop courses is September 15th, 2018!</div>
             @RenderBody()
 
         </div>
@@ -47,6 +49,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquerymarquee")
+    <script>
+        $('.marquee').marquee({
+            duration: 10000,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

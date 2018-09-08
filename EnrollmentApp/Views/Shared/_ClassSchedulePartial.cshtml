@@ -1,0 +1,40 @@
+﻿@model List<EnrollmentApp.Models.Course>
+@if (Model == null)
+{
+    <p>No Schedule Available</p>
+}
+else
+{
+<table class="table mt-4">
+    <tr>
+        <th>Course Name</th>
+        <th>Course No.</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Room</th>
+    </tr>
+
+    @for (int i = 0; i < Model.Count; i++)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model[i].Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model[i].Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model[i].Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model[i].Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model[i].Room)
+        </td>
+    </tr>
+    }
+</table>
+
+        }
+
