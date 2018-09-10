@@ -217,7 +217,7 @@ namespace EnrollmentApp.Controllers
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
         {
-            return View();
+            return PartialView("ChangePassword");
         }
 
         //
