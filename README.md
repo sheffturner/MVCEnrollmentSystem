@@ -7,8 +7,7 @@ Students
 1. Prospective student will be able to register for an account on the web application site.
 2. Prospective/current students will be able to login successfully on the site.
 2. Apply to become a student at the University. (includes all personal data such full name, dob, gender, address etc.)
-3. Current students will be able to view their personal information and class schedule, add (enroll)/drop courses (major specific) to/from their 
-   schedule, query all courses based on their course number or major.
+3. Current students will be able to view their personal information, grades, and class schedule, add (enroll)/drop courses to/from their      schedule, query all courses based on their course number or major.
    
 Educators
 1. Educators will be able to login on the web application site.
