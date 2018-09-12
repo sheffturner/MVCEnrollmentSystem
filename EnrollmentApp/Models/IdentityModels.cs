@@ -14,32 +14,14 @@ namespace EnrollmentApp.Models
     public class ApplicationUser : IdentityUser
     {
 
-        public override string UserName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-
-            StudentRepository student = new StudentRepository();
-
-            Student dem = student.GetSingleStudent(null, UserName);
-            if (dem == null)
-            {
+            
                 var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
                 // Add custom user claims here
 
                 return userIdentity;
-            }
-            else
-            {
-                string usernamees = dem.FullName;
-
-                // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-                var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-                // Add custom user claims here
-
-                userIdentity.AddClaim(new Claim("FullName", usernamees));
-
-                return userIdentity;
-            }
+       
         }
     }
 

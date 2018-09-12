@@ -1,8 +1,11 @@
-﻿@using Microsoft.AspNet.Identity
-@using System.Security.Claims
+﻿@using EnrollmentApp.Controllers;
 @{
-    var userWithClaims = (ClaimsPrincipal)User;
-    var fname = userWithClaims.Claims.First(c => c.Type == "FullName");
 
-    @fname.Value
+    StudentController s = new StudentController();
+    string username = User.Identity.Name;
+    Student student = s.Get(null, username);
+
+    string fullname = student.FullName;
 }
+
+@fullname

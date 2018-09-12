@@ -1,10 +1,13 @@
 ﻿using EnrollmentApp.DAL;
 using EnrollmentApp.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace EnrollmentApp.Controllers
@@ -72,7 +75,9 @@ namespace EnrollmentApp.Controllers
         public bool Post([FromBody]ApplyViewModels student)
         {
             string username = User.Identity.Name;
-            return _studentrepository.InsertStudent(student, username);
+            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindByName(username);
+            string email = user.Email;
+            return _studentrepository.InsertStudent(student, username, email);
         }
 
         // PUT: api/Students/5

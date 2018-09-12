@@ -44,7 +44,7 @@ namespace EnrollmentApp.DAL
         }
 
 
-        public bool InsertStudent(ApplyViewModels student, string username)
+        public bool InsertStudent(ApplyViewModels student, string username, string email)
         {
             
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
@@ -52,6 +52,7 @@ namespace EnrollmentApp.DAL
                 string sql = "dbo.spStudent_InsertStudentInfo";
                 int rowsAffected = connection.Execute(sql, 
                     new {   UserName = username,
+                            Email = email,
                             FirstName = student.FirstName,
                             LastName = student.LastName,
                             DOB = student.DOB,

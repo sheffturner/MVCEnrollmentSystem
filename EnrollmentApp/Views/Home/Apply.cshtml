@@ -60,7 +60,7 @@
                             @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City" })
                         </div>
                         <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Zip, new { @class = "form-control", placeholder = "Zip" })
+                            @Html.TextBoxFor(m => m.Zip, new { @class = "form-control", placeholder = "Zip", id ="zip" })
                         </div>
                     </div>
                 </div>
@@ -117,6 +117,7 @@
         $(document).ready(function () {
             $("#PhoneNumber").mask('(000) 000-0000');
             $("#DOB").mask('00 / 00 / 0000');
+            $("#zip").mask('00000');
         })
     </script>
 }
