@@ -33,5 +33,4 @@ This is really just a demo but I would definitely want to build on top of it dev
 Screenshots of login/register/student's dashboard:
 
 ![](images/ss1.PNG)
-![](images/ss2.PNG)
 ![](images/ss3.PNG)
