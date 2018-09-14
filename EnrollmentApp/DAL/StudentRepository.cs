@@ -13,13 +13,30 @@ using Microsoft.AspNet.Identity.Owin;
 namespace EnrollmentApp.DAL
 {
     public class StudentRepository
-    {
-              
+    {    
+        // Gets all students enrolled at the university
         public List<Student> GetStudents()
         {
-            throw new NotImplementedException();
+            List<Student> students = new List<Student>();
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
+            {
+                string sql = "dbo.spStudent_GetStudents";
+                students = connection.Query<Student>(sql, commandType: CommandType.StoredProcedure).ToList();
+
+                if (students == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return students;
+                }
+
+            }
         }
 
+        // Gets a single student by either their student id or student username
         public Student GetSingleStudent(int? id, string username)
         {
             Student student = new Student();
@@ -43,10 +60,9 @@ namespace EnrollmentApp.DAL
             }
         }
 
-
+        // Inserts a student in the Student table. It takes the username and email used in the apply form as parameters.
         public bool InsertStudent(ApplyViewModels student, string username, string email)
         {
-            
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
             {
                 string sql = "dbo.spStudent_InsertStudentInfo";
@@ -85,6 +101,8 @@ namespace EnrollmentApp.DAL
             throw new NotImplementedException();
         }
 
+        // GetStudentCount() checks whether a student is currently enrolled at the university.
+        // It should return 1 if a username is found.
         public int GetStudentCount(string username)
         {   
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.Cnnval("App1DB")))
@@ -96,6 +114,7 @@ namespace EnrollmentApp.DAL
             }
         }
 
+        // Gets the student's major by their student username
         public string GetStudentMajor(string username)
         {
             Student student = new Student();

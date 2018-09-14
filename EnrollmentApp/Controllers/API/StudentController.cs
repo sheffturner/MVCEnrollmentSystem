@@ -18,6 +18,7 @@ namespace EnrollmentApp.Controllers
         private StudentRepository _studentrepository = new StudentRepository();
 
         [HttpGet]
+        [Route("all")]
         public List<Student> Get()
         {
             return _studentrepository.GetStudents();
