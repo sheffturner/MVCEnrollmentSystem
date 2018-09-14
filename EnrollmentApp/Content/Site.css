@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700');
 
 body {
-   margin: 0;
-   padding: 0;
-   width: 100% !important;
-   height: 100% !important;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
@@ -29,24 +29,24 @@ p{
 
 /* Global*/
 
-div.row{
+div.row {
     margin: 0 !important;
     padding: 0 !important;
 }
 
-.layout-container{
-   height: 100% !important;
+.layout-container {
+    height: 100% !important;
 }
 
-.col-xl-10{
+.col-xl-10 {
     height: 100% !important;
-
 }
 
 /* NAVBAR CSS*/
-.col-xl-2{
+.col-xl-2 {
     padding-left: 0 !important;
 }
+
 div.navigation {
     background: #262161;
     color: #fff;
@@ -54,7 +54,6 @@ div.navigation {
     padding-right: 0 !important;
     padding-left: 0;
     -webkit-box-shadow: 10px 3px 14px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 3px 14px -6px rgba(0,0,0,0.75);
     box-shadow: 10px 3px 14px -6px rgba(0,0,0,0.75);
     height: 100%;
     position: fixed;
@@ -66,43 +65,52 @@ div.navigation {
     z-index: 9999 !important;
 }
 
-div.user-role{
+div.user-role {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 50px;
 }
 
-div.user-role #student-role {
-    color: hsl(0, 100%, 60%);
-    display: block;
-    height: 100%;
-    padding: 19px 0 0 25px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+    div.user-role #student-role {
+        color: hsl(0, 100%, 60%);
+        display: block;
+        height: 100%;
+        padding: 19px 0 0 25px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
-div.user-role #admin-role {
-    background-color: hsl(245, 49%, 20%);
-    display: block;
-    padding-top: 19px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: hsl(245, 49%, 32%);
-}
+    div.user-role #admin-role {
+        background-color: hsl(245, 49%, 20%);
+        display: block;
+        padding-top: 19px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: hsl(245, 49%, 32%);
+    }
 
-div.user-role h5 {
-    flex-basis: 50%;
-    margin-bottom: 0;
-    padding: 0;
-}
+    div.user-role h5 {
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        margin-bottom: 0;
+        padding: 0;
+    }
 
 div.logo-div {
     height: 150px;
     width: 100%;
     margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -110,7 +118,11 @@ div.logo-div {
 #name-status {
     background-color: hsl(245, 49%, 30%);
     padding: 10px 0 10px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 25px;
     font-weight: bold;
@@ -142,7 +154,7 @@ p#student-status {
     letter-spacing: 1px;
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
@@ -163,11 +175,11 @@ li {
     letter-spacing: 1px;
 }
 
-.navigation a:hover{
-    text-decoration: none;
-    background-color: hsl(0, 100%, 60%);
-    color: #fff;
-}
+    .navigation a:hover {
+        text-decoration: none;
+        background-color: hsl(0, 100%, 60%);
+        color: #fff;
+    }
 
 .active {
     color: #fff !important;
@@ -180,7 +192,7 @@ li {
     font-size: 1.2rem;
 }
 
-.oi-minus{
+.oi-minus {
     margin-right: 13px;
 }
 
@@ -199,9 +211,9 @@ li#sign-out {
     color: #d9d9d9;
 }
 
-li#sign-out a:hover{
-    background: none !important;
-}
+    li#sign-out a:hover {
+        background: none !important;
+    }
 
 /* BODY CONTENT STYLES */
 
@@ -221,13 +233,18 @@ div#notificationbar {
     overflow: hidden;
 }
 
-#notifcationbar p{
+#notifcationbar p {
     margin: 0;
     padding: 0;
 }
 
 #div-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     height: calc(100vh - 50px);
 }
@@ -235,7 +252,6 @@ div#notificationbar {
 /* STUDENT PAGE STYLE*/
 
 div#studentinfo {
-    
     background-color: #fff;
     margin-top: 40px;
     margin-left: 25px;
@@ -246,19 +262,19 @@ div#studentinfo {
     margin-bottom: 30px;
 }
 
-#logopic{
-   float: left;
-   position: relative;
-   top: -10px;
+#logopic {
+    float: left;
+    position: relative;
+    top: -10px;
 }
 
-#studentinfo h5{
+#studentinfo h5 {
     display: block;
 }
 
 #major {
     margin-left: 30px;
-    float:left;
+    float: left;
     width: 42%;
 }
 
@@ -267,33 +283,33 @@ div#studentinfo {
     text-align: right;
 }
 
-div.clearfix{
+div.clearfix {
     clear: both;
 }
 
-div#personalinfo{
+div#personalinfo {
     margin-left: 30px;
     width: 33%;
-    float:left;
+    float: left;
 }
 
-#personalinfo p{
+#personalinfo p {
     padding: 0;
     margin: 0;
 }
 
-.colon{
-   float:right;
+.colon {
+    float: right;
 }
 
-td{
+td {
     padding-left: 10px;
     font-size: 1rem;
     font-weight: normal;
 }
 
 #expectedgrad {
-    float:right;
+    float: right;
     width: 62%;
     padding-bottom: 20px;
 }
@@ -305,7 +321,7 @@ hr {
 }
 
 
-h5#grad-date{
+h5#grad-date {
     font-size: 1.1rem;
     font-weight: normal;
     margin-bottom: 15px;
@@ -329,25 +345,25 @@ h5#grad-date{
     width: 7vw;
 }
 
-.circlecheck p{
-    text-align: center;
-    font-weight: 500;
-}
+    .circlecheck p {
+        text-align: center;
+        font-weight: 500;
+    }
 
-.circlecheck .pcomplete {
-    color: #2DC937;
-}
+    .circlecheck .pcomplete {
+        color: #2DC937;
+    }
 
-.circlecheck .pnotstarted {
-    color: #E3E2E7;
-}
+    .circlecheck .pnotstarted {
+        color: #E3E2E7;
+    }
 
-.circlecheck .pinprogress {
-    color: #FED360;
-}
+    .circlecheck .pinprogress {
+        color: #FED360;
+    }
 
-.lines{
-    float:left;
+.lines {
+    float: left;
     padding-top: 7%;
     width: 6vw;
 }
@@ -360,16 +376,15 @@ h5#grad-date{
     border-radius: 10px;
     padding-top: 20px;
     padding-left: 30px;
-
 }
 
-#classschedule p {
-    display: block;
-    margin: 7% auto;
-    color: grey;
-    width: 200px;
-    height: 50px;
-}
+    #classschedule p {
+        display: block;
+        margin: 7% auto;
+        color: grey;
+        width: 200px;
+        height: 50px;
+    }
 
 /* COURSE SEARCH */
 
@@ -384,29 +399,28 @@ div#course-search {
     height: 100vh;
 }
 
-#course-search h5{
-   margin-left: 30px;
+#course-search h5 {
+    margin-left: 30px;
     margin-bottom: 15px;
 }
 
-#form-instructions{
-   width: 100%;
+#form-instructions {
+    width: 100%;
     font-style: italic;
     margin-bottom: 15px;
     font-weight: 500;
 }
 
-#form-instructions p, .form-container p{
-   text-align: center;
-}
+    #form-instructions p, .form-container p {
+        text-align: center;
+    }
 
-.form-container{
+.form-container {
     margin: 0 auto 34px auto;
     width: 20%;
-
 }
 
-.searchbtn{
+.searchbtn {
     width: 100%;
 }
 
@@ -440,31 +454,30 @@ div#course-search {
     margin-right: 25px;
     background-color: #fff;
     margin-bottom: 20px;
-  
 }
 
-#dropcourse-list p {
-    display: block;
-    margin: 7% auto;
-    color: grey;
-    width: 200px;
-    height: 50px;
-}
+    #dropcourse-list p {
+        display: block;
+        margin: 7% auto;
+        color: grey;
+        width: 200px;
+        height: 50px;
+    }
 
 
 /* LOGIN PARTIAL STYLE */
 
-.navli{
+.navli {
     font-weight: 500;
     font-size: 1.1em;
 }
 
-.navli a {
-    color: #F0575B !important;
-}
+    .navli a {
+        color: #F0575B !important;
+    }
 
 /* COURSE SCHEDULE PARTIAL STYLE*/
-#courseschedule-table{
+#courseschedule-table {
     width: 98%;
 }
 
