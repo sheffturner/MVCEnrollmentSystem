@@ -29,3 +29,9 @@ Back end - C#, Web API, SQL Server (includes stored procedures)
 
 NOTE: At this time, the application isn't for real world use as there are many processes that i left out for time constraints.
 This is really just a demo but I would definitely want to build on top of it developing features that represents real processes.
+
+Screenshots of login/register/student's dashboard:
+
+![](images/ss1.PNG)
+![](images/ss2.PNG)
+![](images/ss3.PNG)
