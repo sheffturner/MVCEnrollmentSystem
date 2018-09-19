@@ -15,7 +15,7 @@ p {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 20px;
+    margin-top: 40px !important;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -72,32 +72,31 @@ div.user-role {
     height: 50px;
 }
 
-    div.user-role #student-role {
-        color: hsl(0, 100%, 60%);
-        display: block;
-        height: 100%;
-        padding: 19px 0 0 25px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
+div.user-role #student-role {
+    color: hsl(0, 100%, 60%);
+    display: block;
+    height: 100%;
+    padding: 19px 0 0 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
-    div.user-role #admin-role {
-        background-color: hsl(245, 49%, 20%);
-        display: block;
-        padding-top: 19px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        letter-spacing: 1px;
-        color: hsl(245, 49%, 32%);
-    }
+div.user-role #admin-role {
+    background-color: hsl(245, 49%, 20%);
+    display: block;
+    padding-top: 19px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: hsl(245, 49%, 32%);
+}
 
-    div.user-role h5 {
-        -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-        margin-bottom: 0;
-        padding: 0;
-    }
+div.user-role h5 {
+    flex-basis: 50%;
+    margin-bottom: 0;
+    padding: 0;
+}
 
 div.logo-div {
     height: 150px;
@@ -142,11 +141,12 @@ h5#student-name {
     padding: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 1.3vw;
 }
 
 p#student-status {
     font-weight: normal;
-    font-size: 0.9em;
+    font-size: 1vw;
     display: block;
     margin: 0;
     padding: 0;
@@ -221,7 +221,6 @@ li#sign-out {
     padding-right: 0 !important;
     padding-left: 0 !important;
     background-color: #322B7F;
-    height: 100%;
 }
 
 div#notificationbar {
@@ -246,7 +245,8 @@ div#notificationbar {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: calc(100vh - 50px);
+    height: 100vh;
+    overflow-y:auto;
 }
 
 /* STUDENT PAGE STYLE*/
@@ -333,7 +333,7 @@ h5#grad-date {
 }
 
 #check, #circular-arrow {
-    font-size: 3.5rem;
+    font-size: 3.8vmax;
 }
 
 #circular-arrow {
@@ -343,6 +343,11 @@ h5#grad-date {
 .circlecheck {
     float: left;
     width: 7vw;
+}
+
+.circlecheck svg{
+    display: block;
+    margin: auto;
 }
 
     .circlecheck p {
@@ -364,8 +369,8 @@ h5#grad-date {
 
 .lines {
     float: left;
-    padding-top: 7%;
-    width: 6vw;
+    padding-top: 5%;
+    width: 12%;
 }
 
 
@@ -510,9 +515,6 @@ div#course-search {
     background-size: cover;
 }
 
-.body-content {
-    margin-top: 40px !important;
-}
 .navbar-toggler {
     border-color: #262161;
 }
